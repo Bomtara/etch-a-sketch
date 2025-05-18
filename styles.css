@@ -17,7 +17,7 @@ body {
 
 .box {
     display:flex;
-    background-color: pink;
+    background-color: white;
     height: 800px;
     width: 800px;
     flex-wrap: wrap;
