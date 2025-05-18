@@ -1,14 +1,12 @@
 const box = document.querySelector(".box");
-const fragment = new DocumentFragment();
 const btn = document.querySelector(".btn")
-btn.addEventListener('click', num)
 let n = 10;
-function num(event) {
-    n = parseInt(prompt("Enter the number of grids in each row"), 10);
-} 
-
-const p = 100/n;
-
+btn.addEventListener('click', function num(event) {
+    const input = parseInt(prompt("Enter the number of grids in each row"), 10);
+    n = input;
+    handleGridCreation(n);
+});
+ 
 
 function handleHoverEnter(event){
     const hoveredDiv = event.target;
@@ -24,12 +22,19 @@ function handleHoverEnter(event){
     }
 }
 
-for(let i =0; i< (n*n); i++){
-    const box1 = document.createElement("div");
-    box1.className = "box1";
-    box1.style.cssText = "flex-basis:" + p + "%; ";
-    box1.addEventListener('mouseenter', handleHoverEnter);
-    fragment.append(box1);
+function handleGridCreation(n){
+    box.innerHTML = "";
+    const fragment = new DocumentFragment();
+    const p = 100/n;
+    for(let i =0; i< (n*n); i++){
+        const box1 = document.createElement("div");
+        box1.className = "box1";
+        box1.style.cssText = "flex-basis:" + p + "%; ";
+        box1.addEventListener('mouseenter', handleHoverEnter);
+        fragment.append(box1);
+        box.append(fragment);
+    }
 }
 
-box.append(fragment);
+handleGridCreation(n);
+
