@@ -1,7 +1,14 @@
 const box = document.querySelector(".box");
 const fragment = new DocumentFragment();
-const n = 10;
+const btn = document.querySelector(".btn")
+btn.addEventListener('click', num)
+let n = 10;
+function num(event) {
+    n = parseInt(prompt("Enter the number of grids in each row"), 10);
+} 
+
 const p = 100/n;
+
 
 function handleHoverEnter(event){
     const hoveredDiv = event.target;
