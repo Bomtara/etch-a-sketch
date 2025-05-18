@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    display:flex;
+    background-color: pink;
+    height: 800px;
+    width: 800px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+}
+
+.box1{
+    flex-grow: 1;
+    border: 1px solid black;
+    background-color: green;
+    box-sizing: border-box;
+}
+
